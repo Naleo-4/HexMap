@@ -1607,8 +1607,8 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 6
-  m_WholeNumbers: 0
-  m_Value: 4.5
+  m_WholeNumbers: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2263,12 +2263,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42f885ba1b3b5f4e87348ae25e3a841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noiseSource: {fileID: 2800000, guid: 547883b47398ee045a67a4c607653822, type: 3}
   width: 6
   height: 6
   cellPrefab: {fileID: -2613790584880908643, guid: 8ea98736ca6b8144fb3c5b713963be1b, type: 3}
   cellLabelPrefab: {fileID: 3532415148019122554, guid: 6b7a3caa6e6e90744a19e96eb1aee54e, type: 3}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  touchedColor: {r: 1, g: 0, b: 1, a: 1}
 --- !u!4 &1694654025
 Transform:
   m_ObjectHideFlags: 0
