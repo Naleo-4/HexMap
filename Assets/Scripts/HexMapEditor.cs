@@ -7,7 +7,8 @@ public class HexMapEditor : MonoBehaviour {
     public HexGrid hexGrid;
 
     private Color activeColor;
-    
+    bool applyColor;
+    bool applyElevation = true;
     int activeElevation;
     void Awake () {
         SelectColor(0);
@@ -26,15 +27,29 @@ public class HexMapEditor : MonoBehaviour {
         }
     }
     public void SelectColor (int index) {
-        activeColor = colors[index];
+        applyColor = index >= 0;
+        if (applyColor) {
+            activeColor = colors[index];
+        }
+
     }
     
     void EditCell (HexCell cell) {
-        cell.color = activeColor;
-        cell.Elevation = activeElevation;
-        hexGrid.Refresh();
+        if (applyColor) {
+            cell.Color = activeColor;
+        }
+        if (applyElevation) {
+            cell.Elevation = activeElevation;
+        }
     }
     public void SetElevation (float elevation) {
         activeElevation = (int)elevation;
+    }
+    public void SetApplyElevation (bool toggle) {
+        applyElevation = toggle;
+    }
+    
+    public void ShowUI (bool visible) {
+        hexGrid.ShowUI(visible);
     }
 }

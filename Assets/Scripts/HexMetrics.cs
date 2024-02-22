@@ -28,7 +28,6 @@ public struct EdgeVertices {
     }
 }
 public static class HexMetrics {
-    
     static Vector3[] corners = 
     {
         new Vector3(0f, 0f, outerRadius),
@@ -39,6 +38,8 @@ public static class HexMetrics {
         new Vector3(-innerRadius, 0f, 0.5f * outerRadius),
         new Vector3(0f, 0f, outerRadius)
     };
+    
+    public const int chunkSizeX = 5, chunkSizeZ = 5;
     
     public static Texture2D noiseSource;
     

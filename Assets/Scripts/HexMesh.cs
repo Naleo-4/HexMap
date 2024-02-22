@@ -6,19 +6,17 @@ using System.Collections.Generic;
 public class HexMesh : MonoBehaviour
 {
     Mesh hexMesh;
-    List<Vector3> vertices;
-    List<int> triangles;
     MeshCollider meshCollider;
-    List<Color> colors;
-
+    
+    static List<Vector3> vertices = new List<Vector3>();
+    static List<Color> colors = new List<Color>();
+    static List<int> triangles = new List<int>();
+    
     void Awake()
     {
         GetComponent<MeshFilter>().mesh = hexMesh = new Mesh();
         meshCollider = gameObject.AddComponent<MeshCollider>();
         hexMesh.name = "Hex Mesh";
-        vertices = new List<Vector3>();
-        triangles = new List<int>();
-        colors = new List<Color>();
     }
 
     public void Triangulate(HexCell[] cells)
